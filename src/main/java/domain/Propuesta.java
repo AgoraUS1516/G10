@@ -19,7 +19,6 @@ public class Propuesta extends DomainEntity implements Serializable {
 	/**
 	 * 
 	 */
-	System.out.println("caca");
 	private String pregunta;
 	private Integer numerosSi;
 	private Integer numerosNo;
