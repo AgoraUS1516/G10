@@ -61,16 +61,86 @@
 		<property name="propuestas">
 			<list>
 				<ref bean="propuesta1"></ref>
+				<ref bean="propuesta1.1"></ref>
+				<ref bean="propuesta1.2"></ref>
+				<ref bean="propuesta1.3"></ref>
 			</list>
 		</property>
 	</bean>
 	<bean id="propuesta1" class="domain.Propuesta">
-		<property name="pregunta" value="Prueba?" />
-		<property name="numerosSi" value="1" />
-		<property name="numerosNo" value="1" />
+		<property name="pregunta" value="pregunta de la propuesta1" />
+		<property name="numerosSi" value="10" />
+		<property name="numerosNo" value="50" />
 		<property name="referendumRecuento" ref="referendumRecuento1"/>
 		
 	</bean>
+	
+	<bean id="propuesta1.1" class="domain.Propuesta">
+		<property name="pregunta" value="pregunta de la propuesta1.1" />
+		<property name="numerosSi" value="100" />
+		<property name="numerosNo" value="3" />
+		<property name="referendumRecuento" ref="referendumRecuento1"/>
+		
+	</bean>
+	
+	<bean id="propuesta1.2" class="domain.Propuesta">
+		<property name="pregunta" value="pregunta de la propuesta1.2" />
+		<property name="numerosSi" value="6000" />
+		<property name="numerosNo" value="500" />
+		<property name="referendumRecuento" ref="referendumRecuento1"/>
+		
+	</bean>
+	
+	<bean id="propuesta1.3" class="domain.Propuesta">
+		<property name="pregunta" value="pregunta de la propuesta1.3" />
+		<property name="numerosSi" value="1000" />
+		<property name="numerosNo" value="30" />
+		<property name="referendumRecuento" ref="referendumRecuento1"/>
+		
+	</bean>
+	
+	
+	
+	<bean id="referendumRecuento2" class="domain.ReferendumRecuento">
+		<property name="idVotacionRecuento" value="2" />
+		<property name="idVotacionModificacion" value="2" />
+		<property name="propuestas">
+			<list>
+				<ref bean="propuesta2"></ref>
+				<ref bean="propuesta2.1"></ref>
+				<ref bean="propuesta2.2"></ref>
+			
+			</list>
+		</property>
+	</bean>
+	<bean id="propuesta2" class="domain.Propuesta">
+		<property name="pregunta" value="pregunta de la propuesta2" />
+		<property name="numerosSi" value="30" />
+		<property name="numerosNo" value="40" />
+		<property name="referendumRecuento" ref="referendumRecuento2"/>
+		
+	</bean>
+	
+	<bean id="propuesta2.1" class="domain.Propuesta">
+		<property name="pregunta" value="pregunta de la propuesta2.1" />
+		<property name="numerosSi" value="100" />
+		<property name="numerosNo" value="3" />
+		<property name="referendumRecuento" ref="referendumRecuento2"/>
+		
+	</bean>
+	
+	<bean id="propuesta2.2" class="domain.Propuesta">
+		<property name="pregunta" value="pregunta de la propuesta2.2" />
+		<property name="numerosSi" value="600" />
+		<property name="numerosNo" value="5" />
+		<property name="referendumRecuento" ref="referendumRecuento2"/>
+		
+	</bean>
+	
+	
+	
+	
+	
 	
 	
 	
