@@ -10,6 +10,15 @@ import javax.persistence.OneToMany;
 @Entity
 @Access(AccessType.PROPERTY)
 public class ReferendumRecuento extends DomainEntity {
+	private String nombre;
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
 	private int idVotacionRecuento;
 	private int idVotacionModificacion;
 	private Collection<Propuesta> propuestas;

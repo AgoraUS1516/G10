@@ -19,16 +19,16 @@
 <!-- <link rel="stylesheet" href="stylesheet.css"> -->
 <script src="scripts/jquery.emojiarea.js"></script>
 <script src="scripts/packs/basic/emojis.js"></script>
+ <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
 
 <p><spring:message code="welcome.greeting.prefix" /> ${name}<spring:message code="welcome.greeting.suffix" /></p>
 						
-					<aside id="menu">
-		<ul>
-			<li  onClick=" window.location.href='resultados/ver.do' ">Encuestas</li>
-			
-		</ul>
+						
+						<p><button type="button" class="btn btn-success" onClick=" window.location.href='resultados/encuestas.do' ">Encuestas</button></p>
+						
+					
 	
-	</aside>
+	
 				
 
 	

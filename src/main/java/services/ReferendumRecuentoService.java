@@ -1,5 +1,6 @@
 package services;
 
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -132,6 +133,17 @@ public class ReferendumRecuentoService {
 			res[cont] = res2;
 			cont++;
 		}
+		return res;
+	}
+
+	
+	//Con este método obtenemos todos los 
+	//referendum almacenados en el sistema
+	public Collection<ReferendumRecuento> findAll() {
+		Collection<ReferendumRecuento> res;
+		res = referendumRecuentoRepository.findAll();
+		
+		
 		return res;
 	}
 

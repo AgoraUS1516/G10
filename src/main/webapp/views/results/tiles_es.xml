@@ -21,4 +21,10 @@
 		<put-attribute name="body" value="/views/results/result.jsp" />
 	</definition>
 	
+	<definition name="results/encuestas" extends="master.page">	
+		<put-attribute name="title" value="Encuestas" />
+		<put-attribute name="body" value="/views/results/encuestas.jsp" />
+	</definition>
+	
+	
 </tiles-definitions>
