@@ -49,6 +49,9 @@
 		<security:intercept-url pattern="/profile/action-2.do" access="isAuthenticated()" />
 		<security:intercept-url pattern="/profile/action-3.do" access="isAuthenticated()" />
 		<security:intercept-url pattern="/resultados/ver.do" access="permitAll" />
+		<security:intercept-url pattern="/rest/getVotacion.do" access="permitAll" />
+		<!--Pruebas-->
+		<security:intercept-url pattern="/vote/mine.do" access="permitAll" />
 
 		<security:intercept-url pattern="/**" access="hasRole('ADMIN')" />
 

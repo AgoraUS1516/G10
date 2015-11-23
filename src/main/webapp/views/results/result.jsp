@@ -32,6 +32,7 @@
 				function(data) {
 					submenu = create_submenu($("#available_questions"));
 					$.each(data, function(k, v) {
+						console.log(data);
 						append_element_to_submenu(submenu, v[0],
 								"javascript:setDatos(" + parseInt(v[1], "10")
 										+ ", " + parseInt(v[2], 10) + ")");
@@ -43,8 +44,9 @@
 		datos = [ [ "Si", numYes ], [ "No", numNo ] ];
 		pie(datos);
 	}
-
-	var urlVotaciones = "/CreacionAdminVotaciones/vote/mine.do";
+	//la url votaciones hace referencua a la de pruebas
+	//modificarla por la del subsistema correspondiente
+	var urlVotaciones = "/Frontend-Resultados/vote/mine.do";
 	var datos = [];
 </script>
 <script src="scripts/js/highcharts.js"></script>
@@ -60,6 +62,7 @@
 				function(data) {
 					submenu = create_submenu($("#available_votings"));
 					$.each(data, function(k, v) {
+						console.log(v["id"]);
 						append_element_to_submenu(submenu, v["title"],
 								"javascript:setQuestionsMenuId(" + v["id"]
 										+ ")");
