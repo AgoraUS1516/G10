@@ -65,7 +65,7 @@
 		</property>
 	</bean>
 	<bean id="propuesta1" class="domain.Propuesta">
-		<property name="pregunta" value="El 5 es un pan?" />
+		<property name="pregunta" value="Prueba?" />
 		<property name="numerosSi" value="1" />
 		<property name="numerosNo" value="1" />
 		<property name="referendumRecuento" ref="referendumRecuento1"/>
