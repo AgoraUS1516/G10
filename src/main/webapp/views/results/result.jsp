@@ -20,8 +20,7 @@
 
 
 
-<script type="text/javascript"
-	src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript"src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <script type="text/javascript" src="scripts/js/estadisticas.js"></script>
 <script type="text/javascript">
 	function setQuestionsMenuId(id) {
@@ -114,6 +113,6 @@
 			<li onclick="semicircle(datos);">Semi Circulo</li>
 		</ul>
 	</aside>
-	<footer id="pie"> Derechos Reservados &copy; 2014-2015 </footer>
+	<footer id="pie"> Derechos Reservados &copy; 2015-2016 </footer>
 </div>
 

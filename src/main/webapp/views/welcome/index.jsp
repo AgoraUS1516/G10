@@ -15,7 +15,21 @@
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
 <%@taglib prefix="display" uri="http://displaytag.sf.net"%>
+<link rel="stylesheet" href="styles/jquery.emojiarea.css">
+<!-- <link rel="stylesheet" href="stylesheet.css"> -->
+<script src="scripts/jquery.emojiarea.js"></script>
+<script src="scripts/packs/basic/emojis.js"></script>
 
 <p><spring:message code="welcome.greeting.prefix" /> ${name}<spring:message code="welcome.greeting.suffix" /></p>
+						
+					<aside id="menu">
+		<ul>
+			<li  onClick=" window.location.href='resultados/ver.do' ">Encuestas</li>
+			
+		</ul>
+	
+	</aside>
+				
 
-<p><spring:message code="welcome.greeting.current.time" /> ${moment}</p> 
+	
+<p><spring:message code="welcome.greeting.current.time" /> ${moment}</p>
