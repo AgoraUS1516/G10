@@ -72,18 +72,6 @@
 
 
 <input type="hidden" value="Estadisticas" id="name_e" />
-<header>
-	<div id="cabecera">
-		<img src="images/img/agora_house.png" alt="">
-		<h3>Una nueva forma de</h3>
-		<h1>Tomar decisiones en grupo</h1>
-		<p>Agora@US es un sistema software libre ideal para votaciones
-			seguras online donde participan cientos o miles de personas:
-			primarias abiertas, elecciones institucionales, consultas ciudadanas,
-			referéndums. Proveemos soluciones profesionales de innovación
-			democrática</p>
-	</div>
-</header>
 
 <div id="cuerpo">
 	<div id="ullist">

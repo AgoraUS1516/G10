@@ -8,7 +8,8 @@
  * http://www.tdg-seville.info/License.html
  --%>
 
-<%@page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
@@ -27,10 +28,14 @@
 <%--EGC --%>
 <link rel="stylesheet" href="styles/css/estadistica.css">
 <link rel="stylesheet" href="styles/css/dropdown.css">
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script
+	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 
 
-<link rel="shortcut icon" href="favicon.ico"/> 
+<link rel="shortcut icon" href="favicon.ico" />
 
 <script type="text/javascript" src="scripts/jquery.js"></script>
 <script type="text/javascript" src="scripts/jquery-ui.js"></script>
@@ -58,6 +63,39 @@
 
 <body>
 
+	<!-- Barra principal -->
+	<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">Visualización</a>
+		</div>
+		<div>
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="#">Home</a></li>
+				<li><a href="#">Page 1</a></li>
+			</ul>
+		</div>
+	</div>
+	</nav>
+
+	<div class="container-fluid text-center"
+		style="background-color: #337AB7; /* Green */ color: #ffffff;">
+		<img src="images/img/agora_house.png" class="img-circle" alt="">
+		<h3>Una nueva forma de</h3>
+		<h1>Tomar decisiones en grupo</h1>
+		<p>Agora@US es un sistema software libre ideal para votaciones
+			seguras online donde participan cientos o miles de personas:
+			primarias abiertas, elecciones institucionales, consultas ciudadanas,
+			referéndums. Proveemos soluciones profesionales de innovación
+			democrática</p>
+	</div>
+
+
+
+
+
+
+
 	<div>
 		<tiles:insertAttribute name="header" />
 	</div>
@@ -65,11 +103,11 @@
 		<h1>
 			<tiles:insertAttribute name="title" />
 		</h1>
-		<tiles:insertAttribute name="body" />	
+		<tiles:insertAttribute name="body" />
 		<jstl:if test="${message != null}">
 			<br />
 			<span class="message"><spring:message code="${message}" /></span>
-		</jstl:if>	
+		</jstl:if>
 	</div>
 	<div>
 		<tiles:insertAttribute name="footer" />
