@@ -147,4 +147,11 @@ public class ReferendumRecuentoService {
 		return res;
 	}
 
+	public ReferendumRecuento getReferemdumById(int id) {
+		ReferendumRecuento res;
+		res = referendumRecuentoRepository.getReferemdumById(id);
+		
+		return res;
+	}
+
 }

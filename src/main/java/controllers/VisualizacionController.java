@@ -13,7 +13,11 @@ package controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import domain.Propuesta;
+import domain.ReferendumRecuento;
 
 import services.ReferendumRecuentoService;
 
@@ -43,6 +47,29 @@ public class VisualizacionController extends AbstractController {
 	public ModelAndView verEncuestas() {
 		ModelAndView result = new ModelAndView("results/encuestas");
 		result.addObject("encuestas", referendumRecuentoService.findAll());
+		return result;
+
+	}
+	@RequestMapping("/graficas")
+	public ModelAndView verGraficas(@RequestParam int id) {
+		ModelAndView result = new ModelAndView("results/graficas");
+		
+		ReferendumRecuento referendumRecuento;
+		
+		referendumRecuento = referendumRecuentoService.getReferemdumById(id);
+		String tituloPregunta = null;
+		Integer no=0;
+		Integer si=0;
+		for(Propuesta p: referendumRecuento.getPropuestas()){
+			tituloPregunta = p.getPregunta();
+		 no = p.getNumerosNo();
+		 si = p.getNumerosSi();
+			
+			
+		}
+	result.addObject("tituloPregunta", tituloPregunta);
+	result.addObject("numeroSi", si);
+	result.addObject("numeroNo",no);
 		return result;
 
 	}
