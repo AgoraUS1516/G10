@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html ng-app="AgoraUS">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<!-- EGC -->
+<link rel="stylesheet" href="styles/css/estadistica.css">
+<link rel="stylesheet" href="styles/css/dropdown.css">
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<!-- FIN EGC -->
+
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="stylesheet" href="styles/common.css" type="text/css">
+<!-- <link rel="stylesheet" href="styles/jmenu.css" media="screen" -->
+<!-- 	type="text/css" /> -->
+<!-- <link rel="stylesheet" href="styles/displaytag.css" type="text/css"> -->
+
+
+<title>Insert title here</title>
+
+</head>
+<body>
+
+	<!-- Barra principal -->
+	<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">Visualización</a>
+		</div>
+		<div>
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="#">Home</a></li>
+				<li><a href="#">Page 1</a></li>
+			</ul>
+		</div>
+	</div>
+	</nav>
+
+	<div class="container-fluid text-center"
+		style="background-color: #337AB7; /* Green */ color: #ffffff;">
+		<img src="images/img/agora_house.png" class="img-circle" alt="">
+		<h3>Una nueva forma de</h3>
+		<h1>Tomar decisiones en grupo</h1>
+		<p>Agora@US es un sistema software libre ideal para votaciones
+			seguras online donde participan cientos o miles de personas:
+			primarias abiertas, elecciones institucionales, consultas ciudadanas,
+			referéndums. Proveemos soluciones profesionales de innovación
+			democrática</p>
+	</div>
+
+	<div>Aqui va el header</div>
+	<div>
+		<h1>Aqui va el titulo de la pagina</h1>
+
+		<p>1 + 2 = {{1+2}}</p>
+
+		<!--<tiles:insertAttribute name="body" />-->
+		<!-- <jstl:if test="${message != null}">
+			<br />
+			<span class="message"><spring:message code="${message}" /></span>
+		</jstl:if> -->
+	</div>
+
+	<div ng-controller="FooterController">
+		<div ng-include src="footer.url"></div>	
+		<script type="text/ng-template" id="footer.html"></script>
+	</div>
+
+</body>
+<!-- Scripts al final para que la pagina cargue mas rapido -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script
+	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<!-- Angular Scripts -->
+<script type="text/javascript" src="scripts/angular.min.js"></script>
+<script type="text/javascript" src="scripts/angular/app.js"></script>
+<script type="text/javascript" src="scripts/angular/controllers.js"></script>
+<!-- FIN Angular Scripts -->
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		//$("#jMenu").jMenu();
+	});
+
+	function askSubmission(msg, form) {
+		if (confirm(msg))
+			form.submit();
+	}
+</script>
+
+</html>
