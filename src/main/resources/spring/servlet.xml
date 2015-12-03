@@ -112,7 +112,7 @@
 
 	<!-- Tiles -->
 
-	<import resource="config/tiles.xml" />
+	<!-- <import resource="config/tiles.xml" />
 
 	<bean id="tilesConfigurer"
 		class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
@@ -123,7 +123,7 @@
 		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 		<property name="viewClass"
 			value="org.springframework.web.servlet.view.tiles2.TilesView" />
-	</bean>
+	</bean> -->
 	
 	 <!-- Configure to plugin JSON as request and response in method handler -->
     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
