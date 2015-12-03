@@ -19,12 +19,14 @@
 
 <title>Insert title here</title>
 
+<base href="/Frontend-Resultados/">
+
 </head>
 <body ng-controller="MainController">
 
 	<div>
-		<div ng-include src="header.url"></div>
-		<script type="text/ng-template" id="header.html"></script>
+		<div ng-include="header.url"></div>
+		<!-- <script type="text/ng-template" id="header.html"></script> -->
 	</div>
 
 	<div>
@@ -37,11 +39,16 @@
 			<br />
 			<span class="message"><spring:message code="${message}" /></span>
 		</jstl:if> -->
+
+		<div ng-view>
+			<!-- Cargamos aqui las diferentes vistas -->
+		</div>
+
 	</div>
 
 	<div>
-		<div ng-include src="footer.url"></div>	
-		<script type="text/ng-template" id="footer.html"></script>
+		<div ng-include="footer.url"></div>
+		<!-- <script type="text/ng-template" id="footer.html"></script> -->
 	</div>
 
 </body>
@@ -53,6 +60,7 @@
 
 <!-- Angular Scripts -->
 <script type="text/javascript" src="scripts/angular.min.js"></script>
+<script type="text/javascript" src="scripts/angular-route.min.js"></script>
 <script type="text/javascript" src="scripts/angular/app.js"></script>
 <script type="text/javascript" src="scripts/angular/controllers.js"></script>
 <!-- FIN Angular Scripts -->
