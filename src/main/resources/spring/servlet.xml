@@ -112,9 +112,9 @@
 
 	<!-- Tiles -->
 
-	<!-- <import resource="config/tiles.xml" />
+	<import resource="config/tiles.xml" />
 
-	<bean id="tilesConfigurer"
+	<!-- <bean id="tilesConfigurer"
 		class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
 		<property name="definitions" ref="tiles" />
 	</bean>

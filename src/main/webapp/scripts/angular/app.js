@@ -9,7 +9,7 @@ agoraUSApp.config([ '$routeProvider', '$locationProvider',
 			}).
 			when('/resultados/encuestas', {
 				templateUrl : 'views/visualizacion/encuesta.html',
-				controller : 'VisualizacionController'
+				controller : 'VisualizacionRestController'
 			})./* Aqui van mas configuraciones de ruta */
 			otherwise({
 				redirectTo : '/error.html'

@@ -9,6 +9,8 @@ import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Access(AccessType.PROPERTY)
 public class Propuesta extends DomainEntity implements Serializable {
@@ -53,6 +55,8 @@ public class Propuesta extends DomainEntity implements Serializable {
 		this.numerosNo = numerosNo;
 	}
 
+	// Añadida para que al parsear al JSON no se produzca una cadena infinita
+	@JsonBackReference
 	@Valid
 	@ManyToOne(optional = false)
 	@NotNull
