@@ -82,13 +82,9 @@
 	<div class="container-fluid text-center"
 		style="background-color: #337AB7; /* Green */ color: #ffffff;">
 		<img src="images/img/agora_house.png" class="img-circle" alt="">
-		<h3>Una nueva forma de</h3>
-		<h1>Tomar decisiones en grupo</h1>
-		<p>Agora@US es un sistema software libre ideal para votaciones
-			seguras online donde participan cientos o miles de personas:
-			primarias abiertas, elecciones institucionales, consultas ciudadanas,
-			referéndums. Proveemos soluciones profesionales de innovación
-			democrática</p>
+		<h3><spring:message code="master.page.layout.title.1" /></h3>
+		<h1><spring:message code="master.page.layout.title.2" /></h1>
+		<p><spring:message code="master.page.layout.text" /></p>
 	</div>
 
 
