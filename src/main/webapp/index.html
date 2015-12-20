@@ -6,7 +6,10 @@
 <!-- EGC -->
 <!-- <link rel="stylesheet" href="styles/css/estadistica.css">
 <link rel="stylesheet" href="styles/css/dropdown.css"> -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+	crossorigin="anonymous">
 <!-- FIN EGC -->
 
 <link rel="shortcut icon" href="favicon.ico" />
@@ -16,43 +19,11 @@
 <!-- <link rel="stylesheet" href="styles/displaytag.css" type="text/css"> -->
 
 
-<title>{{title || "AgoraUS"}}</title>
-
 <!-- Esto sirve para que coja las rutas a partir de la url de la aplicacion. Se necesita porque se ha especificado en app.js el $locationProvider.html5(true) -->
 <base href="/Frontend-Resultados/">
 
-</head>
-<body ng-controller="MainController">
 
-	<div>
-		<div ng-include="header.url"></div>
-		<!-- <script type="text/ng-template" id="header.html"></script> -->
-	</div>
-
-	<div class="container">
-		<h1>{{title || "AgoraUS"}}</h1>
-
-		<p>1 + 2 = {{1+2}}</p>
-
-		<!--<tiles:insertAttribute name="body" />-->
-		<!-- <jstl:if test="${message != null}">
-			<br />
-			<span class="message"><spring:message code="${message}" /></span>
-		</jstl:if> -->
-
-		<div ng-view>
-			<!-- Cargamos aqui las diferentes vistas -->
-		</div>
-
-	</div>
-
-	<div>
-		<div ng-include="footer.url"></div>
-		<!-- <script type="text/ng-template" id="footer.html"></script> -->
-	</div>
-
-</body>
-<!-- Scripts al final para que la pagina cargue mas rapido -->
+<!-- Scripts en el header para que cuando cargue la página se no se muestren las variables de angular -->
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script
@@ -75,5 +46,36 @@
 			form.submit();
 	}
 </script>
+
+<title>{{title || "AgoraUS"}}</title>
+</head>
+<body ng-controller="MainController"><!-- class="container" si queremos margen -->
+
+	<div>
+		<div ng-include="header.url"></div>
+		<!-- <script type="text/ng-template" id="header.html"></script> -->
+	</div>
+
+	<div><!-- class="container" si queremos margen -->
+		<h1>{{title || "AgoraUS"}}</h1>
+
+		<!--<tiles:insertAttribute name="body" />-->
+		<!-- <jstl:if test="${message != null}">
+			<br />
+			<span class="message"><spring:message code="${message}" /></span>
+		</jstl:if> -->
+
+		<div ng-view>
+			<!-- Cargamos aqui las diferentes vistas -->
+		</div>
+
+	</div>
+
+	<div>
+		<div ng-include="footer.url"></div>
+		<!-- <script type="text/ng-template" id="footer.html"></script> -->
+	</div>
+
+</body>
 
 </html>

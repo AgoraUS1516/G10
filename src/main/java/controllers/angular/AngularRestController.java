@@ -1,4 +1,4 @@
-package controllers;
+package controllers.angular;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -15,7 +15,7 @@ import domain.ReferendumRecuento;
 
 @Controller
 @RequestMapping("/api/resultados")
-public class VisualizacionRestController{
+public class AngularRestController{
 
 	@Autowired
 	private ReferendumRecuentoService referendumRecuentoService;
