@@ -7,9 +7,13 @@ agoraUSApp.config([ '$routeProvider', '$locationProvider',
 				templateUrl:'views/main/main.html',
 				controller:'MainViewController'
 			}).
-			when('/resultados/encuestas', {
+			when('/resultados/encuestas.do', {
 				templateUrl : 'views/visualizacion/encuesta.html',
 				controller : 'VisualizacionRestController'
+			}).//Errores
+			when('/error.do',{
+				templateUrl: 'views/main/error.html',
+				controller: 'ErrorController'
 			})./* Aqui van mas configuraciones de ruta */
 			otherwise({
 				redirectTo : '/error.html'

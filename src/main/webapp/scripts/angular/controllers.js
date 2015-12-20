@@ -24,6 +24,12 @@ agoraUSControllers.controller('MainController', [ '$scope', '$route',
 			showHeaderAndFooter($scope, null);
 		} ]);
 
+//Muestra una pantalla de error
+agoraUSControllers.controller('ErrorController',['$scope','$routeParams',function($scope,$routeParams){
+	showHeaderAndFooter($scope,"Error");
+	$scope.params = $routeParams;
+}]);
+
 // Vista por defecto en index.html
 agoraUSControllers.controller('MainViewController', [ '$scope', '$routeParams',
 		function($scope, $routeParams) {
@@ -47,6 +53,5 @@ agoraUSControllers.controller('VisualizacionRestController', [
 					}, function errorCallback(response) {
 						alert('Error obteniendo el objeto JSON');
 					});
-			$scope.test = "funciona";
 			$scope.params = $routeParams;
 		} ]);
