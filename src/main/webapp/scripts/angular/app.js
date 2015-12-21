@@ -10,13 +10,17 @@ agoraUSApp.config([ '$routeProvider', '$locationProvider',
 			when('/resultados/encuestas.do', {
 				templateUrl : 'views/visualizacion/encuesta.html',
 				controller : 'VisualizacionRestController'
+			}).
+			when('/resultados/encuestas.do?encuesta=:encuesta',{
+				templateUrl : 'views/visualizacion/encuesta.html',
+				controller : 'visualizacionRestController',
 			}).//Errores
 			when('/error.do',{
 				templateUrl: 'views/main/error.html',
 				controller: 'ErrorController'
 			})./* Aqui van mas configuraciones de ruta */
 			otherwise({
-				redirectTo : '/error.html'
+				redirectTo : '/error.do'
 			});
 
 			// configure html5 to get links working on jsfiddle
