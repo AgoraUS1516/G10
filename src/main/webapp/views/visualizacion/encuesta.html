@@ -1,22 +1,29 @@
-<table class="table table-responsive table-striped">
-	<thead>
-		<tr>
-			<th>Nombre</th>
-			<th>ID Recuento</th>
-			<th>ID Modificaci&oacute;n</th>
-			<th>
-				<!-- Vacio para que muestre solo el enlace -->
-			</th>
+<div ng-show="params.encuesta == null">
+	<table class="table table-responsive table-striped">
+		<thead>
+			<tr>
+				<th>Nombre</th>
+				<th>ID Recuento</th>
+				<th>ID Modificaci&oacute;n</th>
+				<th>
+					<!-- Vacio para que muestre solo el enlace -->
+				</th>
+	
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="encuesta in encuestas">
+				<td>{{encuesta.nombre}}</td>
+				<td>{{encuesta.idVotacionRecuento}}</td>
+				<td>{{encuesta.idVotacionModificacion}}</td>
+				<td><a href="resultados/encuestas.do?encuesta={{encuesta.id}}">Ver
+						resultados</a></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 
-		</tr>
-	</thead>
-	<tbody>
-		<tr ng-repeat="encuesta in encuestas">
-			<td>{{encuesta.nombre}}</td>
-			<td>{{encuesta.idVotacionRecuento}}</td>
-			<td>{{encuesta.idVotacionModificacion}}</td>
-			<td><a href="api/resultados/ver/{{encuesta.id}}">Ver
-					resultados</a></td>
-		</tr>
-	</tbody>
-</table>
+<div ng-show="params.encuesta != null">
+	AQUI VA EL CHART
+	<!-- TODO: Añadir chart -->
+</div>

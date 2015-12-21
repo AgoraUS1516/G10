@@ -65,7 +65,7 @@
 			<span class="message"><spring:message code="${message}" /></span>
 		</jstl:if> -->
 
-		<div ng-view>
+		<div ng-view ng-show="dataHasLoaded">
 			<!-- Cargamos aqui las diferentes vistas -->
 		</div>
 
