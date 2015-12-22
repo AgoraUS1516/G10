@@ -18,6 +18,9 @@ agoraUSApp.config([ '$routeProvider', '$locationProvider',
 			when('/error.do',{
 				templateUrl: 'views/main/error.html',
 				controller: 'ErrorController'
+			}).
+			when('/index',{
+				redirectTo : '/'
 			})./* Aqui van mas configuraciones de ruta */
 			otherwise({
 				redirectTo : '/error.do'
