@@ -1,5 +1,6 @@
 package services;
 
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -54,6 +55,12 @@ public class PropuestaService {
 		res.add(p1);
 		res.add(p2);
 		res.add(p3);
+		return res;
+	}
+
+	public Collection<Propuesta> findAll() {
+		Collection<Propuesta> res;
+		res = propuestaRepository.findAll();
 		return res;
 	}
 
