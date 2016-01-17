@@ -40,6 +40,17 @@ public class ReferendumRecuentoServiceTest extends AbstractTest{
 		
 		authenticate(null);
 	}
+	
+	@Test
+	public void testSizeReferendum() {
+		authenticate(admin);
+	
+		List<ReferendumRecuento> all;
+		all = new ArrayList<ReferendumRecuento>(referendumRecuentoService.findAll());
+		Assert.isTrue(all.size()==2);
+		
+		authenticate(null);
+	}
 
 
 }

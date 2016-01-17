@@ -38,5 +38,17 @@ public class PropuestaServiceTest extends AbstractTest{
 		
 		authenticate(null);
 	}
+	
+	@Test
+	public void testFindPropuesta() {
+		authenticate(admin);
+	
+		Propuesta propuesta= propuestaService.find(5);
+		Collection<Propuesta> all=new HashSet<Propuesta>();
+		all = propuestaService.findAll();
+		Assert.isTrue(all.contains(propuesta));
+		
+		authenticate(null);
+	}
 
 }
