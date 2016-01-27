@@ -6,6 +6,10 @@ agoraUSApp.config([ '$routeProvider', '$locationProvider',
 			when('/',{
 				templateUrl:'views/main/main.html',
 				controller:'MainViewController'
+			}).//Ver una unica encuesta
+			when('/resultados/encuestas/ver.do',{
+				templateUrl : 'views/visualizacion/encuestaGrafica.html',
+				controller : 'visualizacionController',
 			}).
 			when('/resultados/encuestas.do', {
 				templateUrl : 'views/visualizacion/encuesta.html',
