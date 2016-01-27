@@ -41,35 +41,6 @@ agoraUSControllers.controller('MainViewController', [ '$scope', '$routeParams',
 			$scope.params = $routeParams;
 		} ]);
 
-
-//Vista de encuesta visualizacion controller
-agoraUSControllers.controller('visualizacionController', ['$http','$scope', '$routeParams',
-		function($http,$scope, $routeParams) {
-		//$scope.dataHasLoaded=false;
-		showHeaderAndFooter($scope, "Inicio");
-			
-			
-			$scope.params=$routeParams;
-			$http.get("api/resultados/encuestas.do?encuesta="+$routeParams.encuesta).then(function successCallback(response) {
-				try {
-					console.log("Cargado");	
-					$scope.recuento = response['data'];
-					console.log($scope.recuento);
-					
-					showHeaderAndFooter($scope, "Encuestas");
-					$scope.dataHasLoaded=true;
-				} catch (err) {
-					$window.location.href = "#/error.do";
-				}
-			}, function errorCallback(response) {
-				alert('Error obteniendo el objeto JSON');
-			});
-			
-			
-		} ]);
-
-
-
 // Visualización de resultados
 agoraUSControllers.controller('VisualizacionRestController', [
 		'$scope',
@@ -78,7 +49,6 @@ agoraUSControllers.controller('VisualizacionRestController', [
 		'$window',
 		function($scope, $routeParams, $http, $window) {
 			$scope.dataHasLoaded=false;
-			console.log("Entra aqui");
 			$scope.encuestas = [];
 			resultados = '';
 			if ($routeParams.encuesta == null) {
@@ -102,6 +72,5 @@ agoraUSControllers.controller('VisualizacionRestController', [
 				alert('Error obteniendo el objeto JSON');
 			});
 			$scope.params = $routeParams;
-			
 			console.log("cargado: "+$scope.dataHasLoaded)
 		} ]);
