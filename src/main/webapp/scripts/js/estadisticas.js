@@ -1,3 +1,47 @@
+
+function pie1(data,name){
+	
+	
+
+    	
+        // Build the chart
+			new Highcharts.Chart({
+  
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                renderTo: 'container'
+            },
+            title: {
+                text: name
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: false
+                    },
+                    showInLegend: true
+                }
+            },
+            series: [{
+                type: 'pie',
+                name: name,
+                data: data
+            }]
+        });
+   
+	
+	
+	
+}
+
+
 function pie(data, name) {
 		    $(document).ready(function () {
 		    	

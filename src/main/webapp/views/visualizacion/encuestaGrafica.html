@@ -1,5 +1,8 @@
+<!-- <script src="scripts/js/highcharts.js"></script> -->
+<!-- <script src="scripts/js/highcharts-3d.js"></script> -->
 
 <div ng-show="params.encuesta != null">
+<div ></div>
 <input id="oculto" type="hidden" value="{{params.encuesta}}">
 <p><b>Nombre encuesta: </b>{{recuento.nombre}}</p>
 <b>Preguntas: </b>
@@ -15,15 +18,56 @@
 	
 			</tr>
 		</thead>
-		<tbody>
+		<tbody ng-contoller="visualizacion">
 			<tr ng-repeat="pregunta in recuento.propuestas">
-				<td>{{pregunta.pregunta}}</td>
+				<td>{{pregunta.pregunta}} </td>
+				<input id="numSi-{{$index}}" type="hidden" value="{{pregunta.numerosSi}}">
+				<input id="numNo-{{$index}}" type="hidden" value="{{pregunta.numerosNo}}">
+				<td><button onclick="parseaDatos(this)"  id="{{$index}}" class="btn btn-success">Ver
+						resultados</button></td>
+					
 				
-				<td><a class="btn btn-success" href="resultados/encuestas/ver.do?encuesta={{encuesta.id}}">Ver
-						resultados</a></td>
 			</tr>
 		</tbody>
 	</table>
 
 
 </div>
+<div id="container"></div>
+<script type="text/javascript">
+	
+	
+		/* var app = angular.module('AgoraUS', []);
+
+	app.controller('visualizacion"', ['$scope', function($scope, $window) {
+	 $scope.setDatos=function(numSi,numNo){
+		 
+		 datos = [ [ "Si", 30 ], [ "No", 40 ] ];
+			pie1(datos);
+		 
+		 
+		 
+	 }
+	}]); */
+	
+	
+	
+	function parseaDatos(boton){
+		var posicion=boton.id;
+		//recuentos=document.getElementsByClassName("oculto"+posicion);
+		var numSi=document.getElementById("numSi-"+posicion).value;
+		var numNo=document.getElementById("numNo-"+posicion).value;
+		setDatos(parseInt(numSi),parseInt(numNo));
+	}
+	
+
+	
+
+	function setDatos(numSi, numNo) {
+		datos = [ [ "Si", numSi ], [ "No", numNo ] ];
+		pie1(datos);
+	}
+
+</script>
+<!-- <script src="https://code.highcharts.com/highcharts.js"></script> -->
+<script type="text/javascript" src="scripts/js/estadisticas.js"></script>
