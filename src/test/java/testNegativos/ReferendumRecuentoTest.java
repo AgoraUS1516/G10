@@ -38,7 +38,7 @@ public class ReferendumRecuentoTest extends AbstractTest{
 	
 	
 	@Test(expected=NullPointerException.class)
-	public void testReferendumFalse(){
+	public void testReferendumFalse1(){
 		authenticate(admin);
 		
 		ReferendumRecuento referendumRecuento;
