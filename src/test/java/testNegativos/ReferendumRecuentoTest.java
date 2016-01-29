@@ -66,22 +66,5 @@ public class ReferendumRecuentoTest extends AbstractTest{
 		
 		
 	}
-	@Test(expected=IllegalArgumentException.class)
-	public void testReferendumFalse22(){
-		authenticate(admin);
-		
-		Propuesta propuesta;
-		propuesta = propuestaService.find(5);
-		
-		ReferendumRecuento referendumRecuento;
-		referendumRecuento = referendumRecuentoService.getReferemdumById(9);
-		
-		Collection<Propuesta> propuestas;
-		propuestas = referendumRecuento.getPropuestas();
-		
-		Assert.isTrue(propuestas.contains(propuesta));
-		unauthenticate();
-		
-		
-	}
+
 }
