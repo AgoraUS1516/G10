@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import repositories.PropuestaRepository;
 import domain.Propuesta;
+import domain.ReferendumRecuento;
 
 @Transactional
 @Service
@@ -30,9 +31,9 @@ public class PropuestaService {
 		return propuestaRepository.save(propuestas);
 	}
 
-	public Propuesta find(Integer idPregunta) {
+	public Propuesta find(Integer id) {
 
-		return propuestaRepository.findOne(idPregunta);
+		return propuestaRepository.findOne(id);
 	}
 
 	public List<Propuesta> testPropuestas() {
@@ -62,6 +63,14 @@ public class PropuestaService {
 		Collection<Propuesta> res;
 		res = propuestaRepository.findAll();
 		return res;
+	}
+	
+	public Collection<Propuesta> findPropuestaByReferendumRecuentoId(ReferendumRecuento referendumRecuento){
+		
+		Collection<Propuesta> res;
+		res = propuestaRepository.getPropuestaByReferendumRecuentoId(referendumRecuento.getId());
+		return res;
+		
 	}
 
 }

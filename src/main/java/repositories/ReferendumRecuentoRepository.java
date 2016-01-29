@@ -13,7 +13,7 @@ public interface ReferendumRecuentoRepository extends
 	ReferendumRecuento findIdVotacionRecuento(int idVotacion);
 
 	@Query("select re from ReferendumRecuento re where re.idVotacionModificacion=?1")
-	ReferendumRecuento findIdVotacionModificacion(int idModificacion);
+	ReferendumRecuento findIdVotacionModificacion(int idVotacionModificacion);
 
 	@Query("select r from ReferendumRecuento r where r.id=?1")
 	ReferendumRecuento getReferemdumById(int id);

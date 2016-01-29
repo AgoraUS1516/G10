@@ -1,9 +1,11 @@
-package servicesTests;
+package testPositivos;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import utilities.AbstractTest;
+
+import org.hibernate.mapping.Collection;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +15,9 @@ import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
+import services.PropuestaService;
 import services.ReferendumRecuentoService;
+import domain.Propuesta;
 import domain.ReferendumRecuento;
 
 @ContextConfiguration(locations = { "classpath:spring/datasource.xml",
@@ -28,7 +32,27 @@ public class ReferendumRecuentoServiceTest extends AbstractTest{
 
 	@Autowired
 	private ReferendumRecuentoService referendumRecuentoService;
+	
+	@Autowired
+	private PropuestaService propuestaService;
 
+	
+	
+	@Test
+	public void testFindAllRederendum(){
+		authenticate(admin);
+		
+		List<ReferendumRecuento> referendumRecuentos = (List<ReferendumRecuento>) referendumRecuentoService.findAll();
+		Assert.isTrue(referendumRecuentos.size()==2);
+		
+		unauthenticate();
+	}
+
+	
+	
+	
+	
+	
 	@Test
 	public void testFindReferendum() {
 		authenticate(admin);
