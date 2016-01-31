@@ -22,8 +22,8 @@ public class Pregunta extends DomainEntity{
 		
 	}
 	
-	String pregunta;
-	String cp;
+	private String pregunta;
+	private String cp;
 	
 	@SafeHtml(whitelistType = WhiteListType.NONE)
 	@NotBlank
