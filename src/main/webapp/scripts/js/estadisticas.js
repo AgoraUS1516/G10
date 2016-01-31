@@ -97,6 +97,92 @@ function column1(data, name) {
 
 
 
+function semicircle1(data, name) {
+	new Highcharts.Chart({
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: 0,
+            plotShadow: false,
+            renderTo:'container'
+        },
+        title: {
+            text: name,
+            align: 'center',
+            verticalAlign: 'middle',
+            y: 50
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                dataLabels: {
+                    enabled: true,
+                    distance: -50,
+                    style: {
+                        fontWeight: 'bold',
+                        color: 'white',
+                        textShadow: '0px 1px 2px black'
+                    }
+                },
+                startAngle: -90,
+                endAngle: 90,
+                center: ['50%', '75%']
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: name,
+            innerSize: '50%',
+            data: data
+        }]
+    });
+}
+
+function pie3d1(data, name) {
+	
+	$('#container').highcharts({
+	//new Highcharts.Chart({
+        chart: {
+            type: 'pie',
+            
+            options3d: {
+                enabled: true,
+                alpha: 45,
+                beta: 0
+               
+            }//,renderTo:'container'
+        },
+        title: {
+            text: name
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                depth: 35,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}'
+                }
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: name,
+            data: data
+        }]
+    });
+}
+
+
+//--------------------------
+
+
+
 
 function pie(data, name) {
 		    $(document).ready(function () {
@@ -184,6 +270,10 @@ function column(data, name) {
 	        }]
 	    });
 	}
+
+
+
+
 
 function semicircle(data, name) {
     $('#container').highcharts({

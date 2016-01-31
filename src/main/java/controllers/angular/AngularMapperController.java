@@ -21,6 +21,17 @@ public class AngularMapperController{
 		}
 		return "redirect:"+redirectUrl;
 	}
+	@RequestMapping(value="/resultados/encuestas/ver", method=RequestMethod.GET)
+	public String resultadosEncuesta(@RequestParam(value = "encuesta", required = false) Integer encuesta){
+		String redirectUrl;
+		redirectUrl = "/#/error.do";
+		if(encuesta==null){
+			redirectUrl = "/#/resultados/encuestas.do";
+		}else{
+			redirectUrl = "/#/resultados/encuestas/ver.do?encuesta="+encuesta;
+		}
+		return "redirect:"+redirectUrl;
+	}
 	
 	@RequestMapping(value="/error.do",method = RequestMethod.GET)
 	public String errorToIndex(){

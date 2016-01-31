@@ -42,8 +42,8 @@
 		<ul class="nav nav-tabs">
 			<li class="active"><a data-toggle="tab" onclick="drawPie()">Circular</a></li>
 			<li><a data-toggle="tab" onclick="drawColumn()">Columnas</a></li>
-			<li><a data-toggle="tab" href="#">Menu 2</a></li>
-			<li><a href="#">Menu 3</a></li>
+			<li><a data-toggle="tab" onclick="drawSemiCircle()">Semicirculo</a></li>
+			<li><a data-toggle="tab" onclick="drawPie3d()">Circulo 3d</a></li>
 		</ul>
 
 
@@ -72,6 +72,7 @@
 			}
 
 			datosAct = datos;
+			$(".active").attr('class', '');;
 
 		}
 
@@ -80,9 +81,14 @@
 
 	function drawColumn() {
 
-		column1(datosAct);
+		column(datosAct);
 	}
-
+	function drawSemiCircle(){
+		semicircle(datosAct);
+	}
+	function drawPie3d(){
+		pie3d(datosAct);
+	}
 	function drawPie(boton) {
 		var datos;
 		if (boton) {
@@ -93,9 +99,10 @@
 			datos = datosAct;
 		}
 
-		pie1(datos);
+		pie(datos);
 
 	}
 </script>
-<!-- <script src="https://code.highcharts.com/highcharts.js"></script> -->
+<script src="scripts/js/highcharts.js"></script>
+<script src="scripts/js/highcharts-3d.js"></script>
 <script type="text/javascript" src="scripts/js/estadisticas.js"></script>
