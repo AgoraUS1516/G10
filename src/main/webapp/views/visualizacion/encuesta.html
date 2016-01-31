@@ -2,9 +2,9 @@
 	<table class="table table-responsive table-striped">
 		<thead>
 			<tr>
-				<th>Nombre</th>
-				<th>ID Recuento</th>
-				<th>ID Modificaci&oacute;n</th>
+<!-- 				<th>Nombre</th> -->
+				<th>Identificador</th>
+<!-- 				<th>ID Modificaci&oacute;n</th> -->
 				<th>
 					<!-- Vacio para que muestre solo el enlace -->
 				</th>
@@ -13,9 +13,9 @@
 		</thead>
 		<tbody>
 			<tr ng-repeat="encuesta in encuestas">
-				<td>{{encuesta.nombre}}</td>
-				<td>{{encuesta.idVotacionRecuento}}</td>
-				<td>{{encuesta.idVotacionModificacion}}</td>
+<!-- 				<td>{{encuesta.nombre}}</td> -->
+				<td>{{encuesta.id}}</td>
+				
 				<td><a class="btn btn-success" href="resultados/encuestas/ver.do?encuesta={{encuesta.id}}">Ver
 						resultados</a></td>
 			</tr>

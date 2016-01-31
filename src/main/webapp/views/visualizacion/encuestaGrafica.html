@@ -2,83 +2,100 @@
 <!-- <script src="scripts/js/highcharts-3d.js"></script> -->
 
 <div ng-show="params.encuesta != null">
-<div ></div>
-<input id="oculto" type="hidden" value="{{params.encuesta}}">
-<p><b>Nombre encuesta: </b>{{recuento.nombre}}</p>
-<b>Preguntas: </b>
 
-<table class="table table-responsive table-striped">
-		<thead>
-			<tr>
-				<th>Nombre</th>
-				
-				<th>
-					<!-- Vacio para que muestre solo el enlace -->
-				</th>
-	
-			</tr>
-		</thead>
-		<tbody ng-contoller="visualizacion">
-			<tr ng-repeat="pregunta in recuento.propuestas">
-				<td>{{pregunta.pregunta}} </td>
-				<input id="numSi-{{$index}}" type="hidden" value="{{pregunta.numerosSi}}">
-				<input id="numNo-{{$index}}" type="hidden" value="{{pregunta.numerosNo}}">
-				<td><button onclick="drawPie(this)"  id="{{$index}}" class="btn btn-success">Ver
-						grafica</button></td>
-					
-				
-			</tr>
-		</tbody>
-	</table>
-<ul class="nav nav-tabs">
-  <li class="active"><a data-toggle="tab" onclick="drawPie()">Circular</a></li>
-  <li><a data-toggle="tab" onclick="drawColumn()">Columnas</a></li>
-  <li><a data-toggle="tab" href="#">Menu 2</a></li>
-  <li><a href="#">Menu 3</a></li>
-</ul>
+	<p>
+		<b>Nombre encuesta: </b>
+	<div class="col-xs-6">
+		<table class="table table-responsive table-striped">
+			<thead>
+				<tr>
+					<th>Preguntas</th>
 
 
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="pregunta in recuento.preguntas">
+					<td>{{pregunta.pregunta}}
+
+
+
+						<div ng-repeat="opcion in pregunta.opcions">
+							<input class="opcion{{pregunta.id}}" id="{{opcion.texto}}"
+								type="hidden" value="{{opcion.recuento}}">
+						</div>
+
+					</td>
+
+
+
+					<td><button onclick="drawPie(this)" id="{{pregunta.id}}"
+							class="btn btn-success" >Ver grafica</button></td>
+
+
+				</tr>
+
+			</tbody>
+		</table>
+	</div>
+	<div  id="representacion" class="col-xs-6"  style="display:none;">
+		<ul class="nav nav-tabs">
+			<li class="active"><a data-toggle="tab" onclick="drawPie()">Circular</a></li>
+			<li><a data-toggle="tab" onclick="drawColumn()">Columnas</a></li>
+			<li><a data-toggle="tab" href="#">Menu 2</a></li>
+			<li><a href="#">Menu 3</a></li>
+		</ul>
+
+
+
+		<div id="container"></div>
+	</div>
 </div>
-<div id="container"></div>
-<script type="text/javascript">
-	
-	var idActual=-1;
+<script  type="text/javascript">
+	var idActual = -1;
 	var datosAct;
-	
-	function parseaDatos(boton){
-		var posicion=boton.id;
-		//recuentos=document.getElementsByClassName("oculto"+posicion);
-		if(idActual!=posicion){
-			idActual=posicion;
-			var numSi=document.getElementById("numSi-"+posicion).value;
-			var numNo=document.getElementById("numNo-"+posicion).value;
-			
-			var datos = [ [ "Si", parseInt(numSi) ], [ "No", parseInt(numNo) ] ];
-			datosAct=datos;
-			
+
+	function parseaDatos(boton) {
+		var posicion = boton.id;
+
+		if (idActual != posicion) {
+
+			//[ [ "Si", parseInt(numSi) ], [ "No", parseInt(numNo) ] ]
+			var datos = [];
+
+			idActual = posicion;
+			opciones = document.getElementsByClassName("opcion" + posicion);
+			var i;
+			for (i = 0; i < opciones.length; i++) {
+				datos.push([ opciones[i].id, parseInt(opciones[i].value) ]);
+
+			}
+
+			datosAct = datos;
+
 		}
-		
+
 		return datosAct;
 	}
-	
-	function drawColumn(){
-	
+
+	function drawColumn() {
+
 		column1(datosAct);
 	}
-	
-	function drawPie(boton){
-		var datos;
-		if (boton){
-			datos=parseaDatos(boton);
-		}else{
-			datos=datosAct;
-		}
-		
-		pie1(datos);
-		
-		
-	}
 
+	function drawPie(boton) {
+		var datos;
+		if (boton) {
+			datos = parseaDatos(boton);
+			$("#representacion").show();
+			//$("#representacion").collapse("show");
+		} else {
+			datos = datosAct;
+		}
+
+		pie1(datos);
+
+	}
 </script>
 <!-- <script src="https://code.highcharts.com/highcharts.js"></script> -->
 <script type="text/javascript" src="scripts/js/estadisticas.js"></script>

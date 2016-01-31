@@ -12,6 +12,9 @@ import org.hibernate.validator.constraints.Range;
 import org.hibernate.validator.constraints.SafeHtml;
 import org.hibernate.validator.constraints.SafeHtml.WhiteListType;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 
 @Entity
 @Access(AccessType.PROPERTY)
@@ -46,7 +49,7 @@ public class Opcion extends DomainEntity{
 	}
 	
 	private Pregunta pregunta;
-
+	@JsonBackReference
 	@ManyToOne(optional=false)
 	public Pregunta getPregunta() {
 		return pregunta;
