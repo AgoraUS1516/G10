@@ -68,6 +68,32 @@ agoraUSControllers.controller('visualizacionController', ['$http','$scope', '$ro
 			
 		} ]);
 
+//controller del mapa
+
+agoraUSControllers.controller('mapaController', ['$http','$scope', '$routeParams',
+		function($http,$scope, $routeParams) {
+		//$scope.dataHasLoaded=false;
+		showHeaderAndFooter($scope, "Inicio");
+			
+			
+			$scope.params=$routeParams;
+			$http.get("api/resultados/mapa.do").then(function successCallback(response) {
+				try {
+					console.log("Cargado");	
+					$scope.ciudadesFr = response['data'];
+					console.log($scope.ciudadesFr);
+					
+					showHeaderAndFooter($scope, "Encuestas");
+					$scope.dataHasLoaded=true;
+				} catch (err) {
+					$window.location.href = "#/error.do";
+				}
+			}, function errorCallback(response) {
+				alert('Error obteniendo el objeto JSON');
+			});
+			
+			
+		} ]);
 
 
 // Visualización de resultados

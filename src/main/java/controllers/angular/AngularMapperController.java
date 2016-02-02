@@ -33,6 +33,20 @@ public class AngularMapperController{
 		return "redirect:"+redirectUrl;
 	}
 	
+	@RequestMapping(value="/resultados/mapa", method=RequestMethod.GET)
+	public String resultadosMapa(){
+		String redirectUrl;
+	
+		
+		redirectUrl = "/#/resultados/mapa.do";
+		
+		return "redirect:"+redirectUrl;
+	}
+	
+	
+	
+	
+	
 	@RequestMapping(value="/error.do",method = RequestMethod.GET)
 	public String errorToIndex(){
 		return "redirect:/#/";
