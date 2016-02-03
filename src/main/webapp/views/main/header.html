@@ -12,15 +12,51 @@
 		</div>
 	</div>
 	</nav> -->
+	
+	<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+   <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="javascript:window.location.replace(getBaseUrl());">AGORA US</a></li>
+      
+        <li><a href="resultados/encuestas.do">ENCUESTAS</a></li>
+       
+<!--         <li class="dropdown"> -->
+<!--           <a class="dropdown-toggle" data-toggle="dropdown" href="#">MORE -->
+<!--           <span class="caret"></span></a> -->
+<!--           <ul class="dropdown-menu"> -->
+<!--             <li><a href="#">Merchandise</a></li> -->
+<!--             <li><a href="#">Extras</a></li> -->
+<!--             <li><a href="#">Media</a></li>  -->
+<!--           </ul> -->
+<!--         </li> -->
+        <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-	<div class="container-fluid text-center"
-		style="background-color: #337AB7; /* Green */ color: #ffffff;">
-		<img src="images/img/agora_house.png" class="img-circle" alt="">
-		<h3>Una nueva forma de</h3>
-		<h1>Tomar decisiones en grupo</h1>
-		<p>Agora@US es un sistema software libre ideal para votaciones
-			seguras online donde participan cientos o miles de personas:
-			primarias abiertas, elecciones institucionales, consultas ciudadanas,
-			referéndums. Proveemos soluciones profesionales de innovación
-			democrática</p>
-	</div>
+<div class="container-fluid " style="height:50px;background-color: #337AB7;">
+		</div>
+	<script>	
+	function getBaseUrl() {
+
+		var loc='';
+		var b = document.getElementsByTagName('base');
+		if (b && b[0] && b[0].href) {
+  			if (b[0].href.substr(b[0].href.length - 1) == '/' && loc.charAt(0) == '/')
+    		loc = loc.substr(1);
+  			loc = b[0].href + loc;
+		}
+		console.log(loc);
+		return loc;
+	}
+	</script>

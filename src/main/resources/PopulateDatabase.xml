@@ -57,6 +57,7 @@
 	
 	
 <bean id="encuesta1" class="domain.Encuesta">
+<property name="nombre" value="Encuesta 1" />
 	<property name="preguntas">
 			<list>
 				<ref bean="pregunta1"></ref>
@@ -181,6 +182,7 @@
 
 
 <bean id="encuesta2" class="domain.Encuesta">
+<property name="nombre" value="Encuesta 2" />
 	<property name="preguntas">
 			<list>
 				<ref bean="pregunta2"></ref>
@@ -371,6 +373,7 @@
 	
 	
 <bean id="encuesta3" class="domain.Encuesta">
+<property name="nombre" value="Encuesta 3" />
 	<property name="preguntas">
 			<list>
 				<ref bean="pregunta3"></ref>

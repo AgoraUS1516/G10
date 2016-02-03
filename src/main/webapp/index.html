@@ -4,14 +4,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
 <!-- EGC -->
-<!-- <link rel="stylesheet" href="styles/css/estadistica.css">
-<link rel="stylesheet" href="styles/css/dropdown.css"> -->
+<link rel="stylesheet" href="styles/main.css">
+<!-- <link rel="stylesheet" href="styles/css/dropdown.css">  -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
 	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
 	crossorigin="anonymous">
 <!-- FIN EGC -->
-
+<link rel="stylesheet" href="styles/main.css">
 <link rel="shortcut icon" href="favicon.ico" />
 <!-- <link rel="stylesheet" href="styles/common.css" type="text/css"> -->
 <!-- <link rel="stylesheet" href="styles/jmenu.css" media="screen" -->
@@ -46,6 +46,9 @@
 <script type="text/javascript" src="scripts/angular/app.js"></script>
 <script type="text/javascript" src="scripts/angular/controllers.js"></script>
 <!-- FIN Angular Scripts -->
+
+
+
 <script type="text/javascript">
 	$(document).ready(function() {
 		//$("#jMenu").jMenu();
@@ -59,7 +62,7 @@
 
 <title>{{title || "AgoraUS"}}</title>
 </head>
-<body ng-controller="MainController"><!-- class="container" si queremos margen -->
+<body ng-controller="MainController" data-spy="scroll" data-target=".navbar"><!-- class="container" si queremos margen -->
 
 	<div>
 		<div ng-include="header.url"></div>
@@ -67,7 +70,7 @@
 	</div>
 
 	<div><!-- class="container" si queremos margen -->
-		<h1>{{title || "AgoraUS"}}</h1>
+		
 
 		<!--<tiles:insertAttribute name="body" />-->
 		<!-- <jstl:if test="${message != null}">
