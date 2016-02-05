@@ -86,7 +86,6 @@ public class AngularRestController {
 //		return tuplas;
 //	}
 
-	
 	@RequestMapping(value = "/mapa")
 	public @ResponseBody
 	Object mapa() {
@@ -112,6 +111,21 @@ public class AngularRestController {
 		}
 
 		return tuplas;
+	}
+
+
+	
+
+	@RequestMapping(value = "/preguntas/votadas")
+	public @ResponseBody
+	Object preguntasMasVotada() {
+
+		
+				Collection<Pregunta> preguntas;
+		preguntas = preguntaService.findPreguntasMasVotadas();
+		
+
+		return preguntas;
 	}
 
 	

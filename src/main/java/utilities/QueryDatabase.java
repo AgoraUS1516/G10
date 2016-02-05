@@ -25,7 +25,7 @@ import org.apache.commons.lang.builder.ReflectionToStringBuilder;
 
 public class QueryDatabase {
 	
-	final static String PersistenceUnit = "Sample";
+	final static String PersistenceUnit = "EGC-Frontend";
 
 	public static void main(String[] args) throws Throwable {
 		EntityManagerFactory entityManagerFactory;

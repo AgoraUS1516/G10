@@ -76,12 +76,26 @@ agoraUSControllers.controller('mapaController', ['$http','$scope', '$routeParams
 		showHeaderAndFooter($scope, "Inicio");
 			
 			
+			
+		} ]);
+
+
+
+
+//controller del mapa
+
+agoraUSControllers.controller('preguntasController', ['$http','$scope', '$routeParams',
+		function($http,$scope, $routeParams) {
+		//$scope.dataHasLoaded=false;
+		showHeaderAndFooter($scope, "Inicio");
+			
+			
 			$scope.params=$routeParams;
-			$http.get("api/resultados/mapa.do").then(function successCallback(response) {
+			$http.get("api/resultados/preguntas/votadas.do").then(function successCallback(response) {
 				try {
 					console.log("Cargado");	
-					$scope.ciudadesFr = response['data'];
-					console.log($scope.ciudadesFr);
+					$scope.prMasVotadas = response['data'];
+					console.log($scope.prMasVotadas);
 					
 					showHeaderAndFooter($scope, "Encuestas");
 					$scope.dataHasLoaded=true;
@@ -93,7 +107,16 @@ agoraUSControllers.controller('mapaController', ['$http','$scope', '$routeParams
 			});
 			
 			
+			
+			
+			
+		
+			
 		} ]);
+
+
+
+
 
 
 // Visualización de resultados

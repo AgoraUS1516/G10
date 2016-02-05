@@ -46,6 +46,11 @@ public class PreguntaService {
 		result = preguntaRepository.findAll();
 		return result;
 	}
+	public Collection<Pregunta> findPreguntasMasVotadas(){
+		Collection<Pregunta> result;
+		result = preguntaRepository.getPreguntaMasVotos();
+		return result;
+	}
 
 	public String cpToCiudadString(String codigoPostal){
 		String res = "caca";

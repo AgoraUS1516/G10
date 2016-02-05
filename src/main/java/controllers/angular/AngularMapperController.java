@@ -44,7 +44,18 @@ public class AngularMapperController{
 	}
 	
 	
+	///resultados/preguntas/estadistica.do'
 	
+	
+	@RequestMapping(value="/resultados/preguntas/estadistica", method=RequestMethod.GET)
+	public String preguntasEstadistica(){
+		String redirectUrl;
+	
+		
+		redirectUrl = "/#/resultados/preguntas/estadistica.do";
+		
+		return "redirect:"+redirectUrl;
+	}
 	
 	
 	@RequestMapping(value="/error.do",method = RequestMethod.GET)
