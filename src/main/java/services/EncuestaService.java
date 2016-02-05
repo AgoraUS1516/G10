@@ -21,7 +21,7 @@ public class EncuestaService {
 	// Managed repository
 
 	@Autowired
-	private EncuestaRepository encuestaRepository;
+	private static EncuestaRepository encuestaRepository;
 
 	public void save(Encuesta encuesta) {
 
@@ -38,5 +38,18 @@ public class EncuestaService {
 		result = encuestaRepository.findAll();
 		return result;
 	}
+	
+
+
+	public Collection<Encuesta> findEncuestaByKeyord(String keyword){
+		Collection<Encuesta> res;
+		res = encuestaRepository.findEncuestasByKeyword(keyword);
+		return res;
+	}
+	
+	
+	
+	
+	
 
 }
