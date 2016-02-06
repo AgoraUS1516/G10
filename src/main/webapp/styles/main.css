@@ -41,3 +41,13 @@
 
 
 
+
+
+.dropdown-menu li a {
+    color: #000 !important;
+}
+
+
+.dropdown-menu li a:hover {
+    background-color:#2c6aa0;
+}

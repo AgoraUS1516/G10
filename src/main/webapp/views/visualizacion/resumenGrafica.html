@@ -28,7 +28,7 @@ $(function () {
         $('#container').highcharts('Map', {
 
             title : {
-                text : 'Frecuencia de encuestas por ciudad'
+                text : 'Frecuencia de votaciones por ciudad'
             },
 
             mapNavigation: {
@@ -81,7 +81,7 @@ $(function () {
             {
                 type: 'mapbubble',
                 mapData: geojson,
-                name: 'Frecuencia de encuestas',
+                name: 'Frecuencia de votaciones',
                 joinBy: ['name', 'code'],
                 data: datos,
                 minSize: "0",

@@ -10,10 +10,17 @@
 
 
 <div class="col-xs-6">
-<p>Pregunta/s con mayor cantidad de votos:</p>
-<div ng-repeat="pregunta in prMasVotadas">
+<div style="height:10px;
+"></div>
+<div class="panel panel-primary">
+      <div class="panel-heading"><b>Pregunta/s con mayor cantidad de votos:</b></div>
+      
+      <div class="panel-body" ng-repeat="pregunta in prMasVotadas">
 	{{pregunta.pregunta}}
 	</div>
+    </div>
+
+
 
 
 <table class="table table-responsive table-striped">
@@ -125,7 +132,7 @@ function drawPie(boton) {
 		datos = datosAct;
 	}
 
-	pie(datos);
+	pie(datos,"Numero de votos por cada pregunta de una encuesta");
 
 }
 

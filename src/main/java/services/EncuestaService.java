@@ -21,7 +21,7 @@ public class EncuestaService {
 	// Managed repository
 
 	@Autowired
-	private static EncuestaRepository encuestaRepository;
+	private EncuestaRepository encuestaRepository;
 
 	public void save(Encuesta encuesta) {
 
