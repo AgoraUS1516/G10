@@ -31,7 +31,7 @@ public abstract class AbstractTest {
 	
 	@Before
 	public void setUp() throws Throwable {
-		//PopulateDatabase.main(null);
+		PopulateDatabase.main(null);
 	}
 	
 	@After
