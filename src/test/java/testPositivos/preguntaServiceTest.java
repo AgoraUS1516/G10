@@ -28,7 +28,7 @@ import domain.ReferendumRecuento;
 		"classpath:spring/config/packages.xml" })
 @RunWith(SpringJUnit4ClassRunner.class)
 @Transactional
-@TransactionConfiguration(defaultRollback = false)
+@TransactionConfiguration(defaultRollback = true)
 public class preguntaServiceTest extends AbstractTest{
 
 	String admin = "admin";
